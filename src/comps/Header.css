@@ -1,0 +1,10 @@
+.sign{
+    opacity: 0;
+
+    transition: all .5s cubic-bezier(.06,.36,.48,1.01);
+
+}
+.sign.active{
+    opacity: 1;
+    
+}

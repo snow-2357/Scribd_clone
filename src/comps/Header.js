@@ -1,7 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import {useState} from "react"
+import "./Header.css";
 
 function Header() {
+  const [scroll,setScroll]=useState(false);
+
+  const onScroll = () => {
+    if (window.scrollY >= 100) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+  window.addEventListener("scroll", onScroll);
   return (
     <Container>
       <Ham>
@@ -16,8 +28,8 @@ function Header() {
           srcset=""
         />
       </Logo>
-      <Free>Read Free For 30 Days</Free>
-      <Sign>Sign In</Sign>
+      <Free className={scroll ? "sign active":"sign"}>Read Free For 30 Days</Free>
+      <Sign >Sign In</Sign>
     </Container>
   );
 }
@@ -25,7 +37,11 @@ function Header() {
 export default Header;
 
 const Container = styled.div`
-  position: relative;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+z-index: 10;
+width: 100vw;
+  position: fixed;
+  top: 0;
   height: 65px;
   margin: -8px;
   display: flex;
@@ -58,8 +74,8 @@ const Logo = styled.div`
 const Sign = styled.button`
   cursor: pointer;
   position: absolute;
-
-  right: 0;
+  right: 130px;
+  
   margin: 30px 10px;
   color: white;
   font-size: 18px;
@@ -70,7 +86,8 @@ const Sign = styled.button`
 `;
 
 const Free=styled(Sign)`
-  right: 140px;
+  position: absolute;
+  right: 270px;
   background-color: #1e7b85;
   border:.1px #f1f1f1 solid;
 
