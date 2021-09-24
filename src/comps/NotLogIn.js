@@ -4,9 +4,11 @@ import Body from "./Body";
 import Lowerbody from "./Lowerbody";
 import Show from "./Show";
 import Footer from "./Footer";
+
 function NotLogIn() {
   return (
     <div className="App">
+    
       <Header/>
       <Body />
       <Lowerbody/>

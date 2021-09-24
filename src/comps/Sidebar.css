@@ -1,0 +1,17 @@
+.active{
+    opacity: 1;
+    transition: all .5s ease-in-out; 
+}
+.default{
+    left:-300px;
+    opacity: 0;
+}
+
+.active1{
+    opacity: 1;
+    transition: all .5s ease-in-out; 
+}
+.default1{
+    left:-300px;
+    opacity: 0;
+}

@@ -1,35 +1,57 @@
 import React from "react";
 import styled from "styled-components";
+import "./Sidebar.css";
+import { useState } from "react";
+function Sidebar(props) {
+  const [close, setClose] = useState(false);
 
-function Sidebar() {
+  const closeSidebar = () => {
+    setClose(!close);
+    console.log(close)
+  };
+
   return (
-    <Container>
-      <Head>
-        <Logo>
-          <img
-            src="https://s-f.scribdassets.com/images/landing/home2_landing/scribd_logo_horiz_small.svg?0d06fe978"
-            alt=""
-          />
-        </Logo>
-        <Cross>
-          <span className="left"></span>
-          <span className="right"></span>
-        </Cross>
-      </Head>
-      <Search placeholder="Search ">
-          
-      </Search>
-    </Container>
+    // <div className={close ? "default1" : "active1"}>
+      <Container className={props.click ? "active" : "default"}>
+        <Head>
+          <Logo>
+            <img
+              src="https://s-f.scribdassets.com/images/landing/home2_landing/scribd_logo_horiz_small.svg?0d06fe978"
+              alt=""
+            />
+          </Logo>
+          <Cross onClick={closeSidebar}>
+            <span className="left"></span>
+            <span className="right"></span>
+          </Cross>
+        </Head>
+        <Search placeholder="Search "></Search>
+        <div className="bar"></div>
+      </Container>
+    // </div>
   );
 }
 
 export default Sidebar;
 
 const Container = styled.div`
+  z-index: 1000;
+  position: fixed;
+  top: 0;
   margin: -8px;
-  height: 100vh;
+  height: 105vh;
   width: 240px;
-  background-color: violet;
+  background-color: rgba(245, 245, 245);
+  box-shadow: rgba(100, 100, 100) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  .bar {
+    margin: 30px 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 `;
 const Head = styled.div`
   position: relative;
@@ -49,11 +71,12 @@ const Cross = styled.div`
   right: 35px;
   top: 25px;
   span {
+    background: rgba(0, 0, 0, 0.5);
     width: 25px;
     height: 3px;
     margin: 4px -10px;
     display: block;
-    background: white;
+
     border-radius: 20%;
   }
   .left {
@@ -68,9 +91,9 @@ const Cross = styled.div`
   }
 `;
 
-const Search=styled.input`
-    border: 1px solid black;
-    border-radius: 6px;
-padding: 10px 25px;
-margin-left: 20px;
+const Search = styled.input`
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 10px;
+  margin-left: 20px;
 `;

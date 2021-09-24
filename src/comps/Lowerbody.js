@@ -11,12 +11,13 @@ function Lowerbody() {
 export default Lowerbody;
 
 const Quote= styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+    
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     p{  
-        font-family: 'Sacramento', cursive;
-        font-size: 40px;
+        
+        font-size: 45px;
         color: rgba(120,120,120);
         span{
             font-size: 80px;

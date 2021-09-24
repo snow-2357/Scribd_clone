@@ -1,10 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import {useState} from "react"
+import { useState } from "react";
 import "./Header.css";
+import Sidebar from "./Sidebar";
+
+
 
 function Header() {
-  const [scroll,setScroll]=useState(false);
+
+// click
+
+  const [click, setClick] = useState(false);
+
+const sidebarActive = ()=>{
+  
+  setClick(!click);
+  console.log(click)
+  
+  
+}
+
+
+//  scroll
+  const [scroll, setScroll] = useState(false);
 
   const onScroll = () => {
     if (window.scrollY >= 100) {
@@ -15,31 +33,37 @@ function Header() {
   };
   window.addEventListener("scroll", onScroll);
   return (
-    <Container>
-      <Ham>
-        <span></span>
-        <span></span>
-        <span></span>
-      </Ham>
-      <Logo>
-        <img
-          src="https://s-f.scribdassets.com/images/landing/home2_landing/scribd_logo_horiz_small_white.svg?0d06fe978"
-          alt=""
-          srcset=""
-        />
-      </Logo>
-      <Free className={scroll ? "sign active":"sign"}>Read Free For 30 Days</Free>
-      <Sign >Sign In</Sign>
-    </Container>
+    <>
+      
+      <Container onClick={sidebarActive}>
+        <Ham >
+          <span></span>
+          <span></span>
+          <span></span>
+        </Ham>
+        <Logo>
+          <img
+            src="https://s-f.scribdassets.com/images/landing/home2_landing/scribd_logo_horiz_small_white.svg?0d06fe978"
+            alt=""
+            srcset=""
+          />
+        </Logo>
+        <Free className={scroll ? "sign active" : "sign"}>
+          Read Free For 30 Days
+        </Free>
+        <Sign>Sign In</Sign>
+      </Container>
+      <Sidebar click={click}/>
+    </>
   );
 }
 
 export default Header;
 
 const Container = styled.div`
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-z-index: 10;
-width: 100vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 10;
+  width: 100vw;
   position: fixed;
   top: 0;
   height: 65px;
@@ -75,7 +99,7 @@ const Sign = styled.button`
   cursor: pointer;
   position: absolute;
   right: 130px;
-  
+
   margin: 30px 10px;
   color: white;
   font-size: 18px;
@@ -85,13 +109,13 @@ const Sign = styled.button`
   background-color: transparent;
 `;
 
-const Free=styled(Sign)`
+const Free = styled(Sign)`
   position: absolute;
   right: 270px;
   background-color: #1e7b85;
-  border:.1px #f1f1f1 solid;
+  border: 0.1px #f1f1f1 solid;
 
   @media only screen and (max-width: 700px) {
-    display:none;
+    display: none;
   }
 `;
