@@ -63,7 +63,7 @@ export default Header;
 const Container = styled.div`
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  z-index: 10;
+  z-index: 5;
   width: 100vw;
   position: fixed;
   top: 5px;
@@ -78,6 +78,9 @@ const Container = styled.div`
 const Ham = styled.div`
   cursor: pointer;
   margin-right: 25px;
+  width: 15px;
+  
+  
   span {
     width: 25px;
     height: 3px;
