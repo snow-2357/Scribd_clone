@@ -11,7 +11,7 @@ function Sidebar(props) {
   };
 
   return (
-    // <div className={close ? "default1" : "active1"}>
+    <div className={close ? "default1" : "active1"}>
       <Container className={props.click ? "active" : "default"}>
         <Head>
           <Logo>
@@ -28,7 +28,7 @@ function Sidebar(props) {
         <Search placeholder="Search "></Search>
         <div className="bar"></div>
       </Container>
-    // </div>
+     </div>
   );
 }
 

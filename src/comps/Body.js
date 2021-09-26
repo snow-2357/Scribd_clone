@@ -14,7 +14,6 @@ export default function Body() {
         <button>Read free for 30 days</button>
         <p>Only R299/maonth after. Cancel anytime.</p>
       </Text>
-      
     </Container>
   );
 }
@@ -37,7 +36,6 @@ const Container = styled.div`
     bottom: 0;
     z-index: -1;
   }
-  
 `;
 
 const Text = styled.div`
@@ -58,17 +56,23 @@ const Text = styled.div`
     font-size: 15px;
   }
   button {
-      margin-top: 30px;
+    margin-top: 30px;
     background: #fff;
     color: #001927;
     font-size: 15px;
     font-weight: 600;
-    border:10px solid white;
+    
+    border: 2px solid white;
     border-radius: 4px;
-    padding: 4px 50px;
+    padding: 15px 50px;
+    &:hover {
+      background: #001927;
+      color:#fff ;
+    }
   }
+
   @media only screen and (max-width: 700px) {
-    transform: scale(.9);
+    transform: scale(0.9);
     padding: 120px 40px;
   }
 `;

@@ -35,8 +35,8 @@ const sidebarActive = ()=>{
   return (
     <>
       
-      <Container onClick={sidebarActive}>
-        <Ham >
+      <Container >
+        <Ham onClick={sidebarActive} >
           <span></span>
           <span></span>
           <span></span>
@@ -53,7 +53,7 @@ const sidebarActive = ()=>{
         </Free>
         <Sign>Sign In</Sign>
       </Container>
-      <Sidebar click={click}/>
+      {click && <Sidebar click={click}/>}
     </>
   );
 }
@@ -61,11 +61,12 @@ const sidebarActive = ()=>{
 export default Header;
 
 const Container = styled.div`
+
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   z-index: 10;
   width: 100vw;
   position: fixed;
-  top: 0;
+  top: 5px;
   height: 65px;
   margin: -8px;
   display: flex;
@@ -98,7 +99,7 @@ const Logo = styled.div`
 const Sign = styled.button`
   cursor: pointer;
   position: absolute;
-  right: 130px;
+  right: 100px;
 
   margin: 30px 10px;
   color: white;
@@ -114,6 +115,11 @@ const Free = styled(Sign)`
   right: 270px;
   background-color: #1e7b85;
   border: 0.1px #f1f1f1 solid;
+  &:hover{
+    background-color: rgba(30,123,133,0.7);
+    
+  }
+
 
   @media only screen and (max-width: 700px) {
     display: none;

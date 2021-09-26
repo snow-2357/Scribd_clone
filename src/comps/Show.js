@@ -116,6 +116,10 @@ const Free=styled.button`
   background-color: transparent;
   background-color: #1e7b85;
   border:.1px #f1f1f1 solid;
+  &:hover{
+    background-color: rgba(30,123,133,0.7);
+    
+  }
 
   @media only screen and (max-width: 700px) {
     
