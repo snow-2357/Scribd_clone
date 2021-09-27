@@ -10,11 +10,11 @@ function NotLogIn() {
   return (
     <div className="App">
       <Logincard />
-      {/* <Header/>
+      <Header/>
       <Body />
       <Lowerbody/>
       <Show />
-      <Footer/> */}
+      <Footer/>
     </div>
   );
 }

@@ -1,22 +1,91 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 function Logincard() {
-    return (
-        <Container>
-            <h1>Sign In to Scribd</h1>
-            <ButtonF>Continue with Facebook</ButtonF>
-            <ButtonG>Continue with Google</ButtonG>
-            <span></span>
-            <div className="new">New to Scribd?<span> Sign Up</span></div>
-        </Container>
-    )
+  return (
+    <Container>
+      <Context>
+        <h1>Sign In to Scribd</h1>
+        <ButtonF>
+          {" "}
+          <img src="/icon/fb.png" alt="fb" />{" "}
+          <span>Continue with Facebook</span>{" "}
+        </ButtonF>
+        <ButtonG>
+          {" "}
+          <img src="/icon/g.png" alt="fb" /> <span> Continue with Google </span>{" "}
+        </ButtonG>
+        <span></span>
+        <div className="new">
+          New to Scribd?<span> Sign Up</span>
+        </div>
+      </Context>
+    </Container>
+  );
 }
 
 export default Logincard;
 
-const Container=styled.div`
-    z-index:10;
-`;
-const ButtonF=styled.button``;
+const Container = styled.div`
+  position: fixed;
+margin-left: -8px;
+  width: 100vw;
+  height: 100vh;
 
-const ButtonG=styled.button``;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+`;
+const Context = styled.div`
+margin-top: 30vh;
+    align-items: center;
+
+  display: flex;
+  flex-direction: column;
+
+color:white;
+  .new {
+    margin-bottom: 15px;
+    span {
+      color: blue;
+      cursor: pointer;
+    }
+  }
+`;
+const ButtonF = styled.button`
+  cursor: pointer;
+  position: relative;
+  width: 350px;
+  padding: 10px 20px;
+  background-color: rgba(66, 103, 178);
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: none;
+  margin: 10px;
+  &:hover {
+    background-color: rgba(50, 90, 180);
+  }
+  img {
+    width: 30px;
+  }
+  span {
+    position: relative;
+    top: -7px;
+  }
+`;
+
+const ButtonG = styled(ButtonF)`
+  background-color: #fff;
+  color: #000;
+  &:hover {
+    background-color: rgba(245, 245, 245, 0.9);
+  }
+`;

@@ -4,24 +4,16 @@ import { useState } from "react";
 import "./Header.css";
 import Sidebar from "./Sidebar";
 
-
-
 function Header() {
-
-// click
+  // click
 
   const [click, setClick] = useState(false);
 
-const sidebarActive = ()=>{
-  
-  setClick(!click);
-  console.log(click)
-  
-  
-}
-
-
-//  scroll
+  const sidebarActive = () => {
+    setClick(!click);
+    console.log(click);
+  };
+  //  scroll
   const [scroll, setScroll] = useState(false);
 
   const onScroll = () => {
@@ -34,9 +26,8 @@ const sidebarActive = ()=>{
   window.addEventListener("scroll", onScroll);
   return (
     <>
-      
-      <Container >
-        <Ham onClick={sidebarActive} >
+      <Container>
+        <Ham onClick={sidebarActive}>
           <span></span>
           <span></span>
           <span></span>
@@ -53,7 +44,7 @@ const sidebarActive = ()=>{
         </Free>
         <Sign>Sign In</Sign>
       </Container>
-      {click && <Sidebar click={click}/>}
+      {click && <Sidebar click={click} />}
     </>
   );
 }
@@ -61,7 +52,6 @@ const sidebarActive = ()=>{
 export default Header;
 
 const Container = styled.div`
-
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   z-index: 5;
   width: 100vw;
@@ -79,8 +69,7 @@ const Ham = styled.div`
   cursor: pointer;
   margin-right: 25px;
   width: 15px;
-  
-  
+
   span {
     width: 25px;
     height: 3px;
@@ -118,11 +107,9 @@ const Free = styled(Sign)`
   right: 270px;
   background-color: #1e7b85;
   border: 0.1px #f1f1f1 solid;
-  &:hover{
-    background-color: rgba(30,123,133,0.7);
-    
+  &:hover {
+    background-color: rgba(30, 123, 133, 0.7);
   }
-
 
   @media only screen and (max-width: 700px) {
     display: none;
