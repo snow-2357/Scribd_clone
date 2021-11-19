@@ -9,7 +9,7 @@ import Logincard from "./Logincard";
 function NotLogIn() {
   return (
     <div className="App">
-      <Logincard />
+
       <Header/>
       <Body />
       <Lowerbody/>

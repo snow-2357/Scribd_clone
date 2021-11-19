@@ -44,7 +44,7 @@ function Header() {
         </Free>
         <Sign>Sign In</Sign>
       </Container>
-      {click && <Sidebar click={click} />}
+      {click && <Sidebar sidebarActive={sidebarActive} click={click}/>}
     </>
   );
 }

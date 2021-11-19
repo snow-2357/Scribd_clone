@@ -1,17 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import "./Sidebar.css";
-import { useState } from "react";
-function Sidebar(props) {
-  const [close, setClose] = useState(false);
 
-  const closeSidebar = () => {
-    setClose(!close);
-    console.log(close)
-  };
+// import { useState } from "react";
+function Sidebar(props) {
 
   return (
-    <div className={close ? "default1" : "active1"}>
+   
       <Container className={props.click ? "active" : "default"}>
         <Head>
           <Logo>
@@ -20,7 +14,7 @@ function Sidebar(props) {
               alt=""
             />
           </Logo>
-          <Cross onClick={closeSidebar}>
+          <Cross onClick={props.sidebarActive}>
             <span className="left"></span>
             <span className="right"></span>
           </Cross>
@@ -28,7 +22,7 @@ function Sidebar(props) {
         <Search placeholder="Search "></Search>
         <div className="bar"></div>
       </Container>
-     </div>
+     
   );
 }
 
