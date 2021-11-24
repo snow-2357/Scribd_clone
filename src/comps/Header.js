@@ -34,13 +34,13 @@ function Header() {
         </Ham>
         <Logo>
           <img
-            src="https://s-f.scribdassets.com/images/landing/home2_landing/scribd_logo_horiz_small_white.svg?0d06fe978"
+            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png"
             alt=""
             srcset=""
           />
         </Logo>
         <Free className={scroll ? "sign active" : "sign"}>
-          Read Free For 30 Days
+        Free Shipping
         </Free>
         <Sign>Sign In</Sign>
       </Container>
@@ -81,7 +81,7 @@ const Ham = styled.div`
 `;
 const Logo = styled.div`
   cursor: pointer;
-  height: 25px;
+  height: 30px;
   width: auto;
   img {
     height: 100%;

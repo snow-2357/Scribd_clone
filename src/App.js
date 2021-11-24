@@ -1,8 +1,10 @@
-import NotLogIn from "./comps/NotLogIn";
+import ForEveryone from "./pages/ForEveryone";
+import ForUsers from "./pages/ForUsers";
 function App() {
   return (
     <div className="App">
-     <NotLogIn/>
+     <ForEveryone/>
+     {/* <ForUsers /> */}
     </div>
   );
 }
